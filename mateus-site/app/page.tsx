@@ -21,6 +21,11 @@ export default function Home() {
       title: "Clusterização: K-Centros vs K-Means", 
       description: "Implementação em Python do algoritmo “k-centros” e comparação com o modelo “k-means”.", 
       tags: ["Python", "Algoritmos", "Machine Learning"] 
+    },
+    { 
+      title: "RPG com Mestre IA", 
+      description: "Desenvolvimento em andamento de um Role Playing Game (RPG) onde o mestre é um pseudo agente de IA.", 
+      tags: ["Python", "IA", "Game Dev"] 
     }
   ];
 
@@ -38,12 +43,7 @@ export default function Home() {
   ];
 
   const devProjects = [
-    { 
-      title: "RPG com Mestre IA", 
-      description: "Desenvolvimento em andamento de um Role Playing Game (RPG) onde o mestre é um pseudo agente de IA.", 
-      tags: ["Python", "IA", "Game Dev"] 
-    },
-    { 
+    {
       title: "Sistema Fullstack Solveware", 
       description: "Desenvolvimento do front-end da aplicação, modelagem de relacionamentos do banco de dados e gestão da equipe de produção.", 
       tags: ["SQL", "HTML/CSS", "Gestão"] 

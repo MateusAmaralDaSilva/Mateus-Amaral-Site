@@ -30,7 +30,7 @@ export default function Footer() {
                 Email
             </a>
             <a 
-                href="https://wwws.cnpq.br/cvlattesweb/PKG_MENU.menu?f_cod=7DC9F83C1DFFA13A10616DDA431FDFAD" 
+                href="https://lattes.cnpq.br/2541847946289795" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:underline underline-offset-4"

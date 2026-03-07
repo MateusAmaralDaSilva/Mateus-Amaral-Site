@@ -29,6 +29,14 @@ export default function Footer() {
             >
                 Email
             </a>
+            <a 
+                href="https://wwws.cnpq.br/cvlattesweb/PKG_MENU.menu?f_cod=7DC9F83C1DFFA13A10616DDA431FDFAD" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:underline underline-offset-4"
+            >
+                Lattes
+            </a>
             </div>
         </div>
         </footer>

@@ -2,19 +2,60 @@ import AreaSection from '@/components/areasection';
 
 export default function Home() {
   const dataScienceProjects = [
-    { title: "Simulador de Federated Learning", description: "Treinamento descentralizado de modelos preservando a privacidade dos dados nas bordas.", tags: ["Python", "Machine Learning"] },
-    { title: "Otimização de Arquitetura", description: "Análise de performance e consumo de recursos em topologias de redes neurais.", tags: ["Python", "Computer Architecture"] }
+    { 
+      title: "IA em Saúde & Aprendizado Federado", 
+      description: "Implementação de modelos de aprendizado federado na plataforma Flautim para detecção de câncer de colo uterino, utilizando arquiteturas multimodais e hierárquicas.", 
+      tags: ["Python", "Flautim", "Federated Learning"] 
+    },
+    { 
+      title: "Simulação de Redes Heterogêneas", 
+      description: "Simulação de distribuições heterogêneas de dados em ambientes federados utilizando Dirichlet partitioning.", 
+      tags: ["Python", "Data Distribution"] 
+    },
+    { 
+      title: "Explainable AI (XAI) & Avaliação", 
+      description: "Aplicação de métodos avançados de avaliação de modelos e Explainable AI (XAI) para interpretação e validação das decisões do modelo.", 
+      tags: ["PyTorch", "Scikit-learn", "XAI"] 
+    },
+    { 
+      title: "Clusterização: K-Centros vs K-Means", 
+      description: "Implementação em Python do algoritmo “k-centros” e comparação com o modelo “k-means”.", 
+      tags: ["Python", "Algoritmos", "Machine Learning"] 
+    }
   ];
 
   const cyberProjects = [
-    { title: "Scanner de Vulnerabilidades", description: "Automação de varreduras em infraestruturas web.", tags: ["Bash", "Python", "Security"] }
+    { 
+      title: "Criptografia e Quebra de Cifras", 
+      description: "Sistema de criptografia por cifra de substituição aleatória e quebra via análise de frequência de idioma e algoritmo de MillerRobin para encontrar números primos.", 
+      tags: ["Python", "Cryptography", "Miller-Rabin"] 
+    },
+    { 
+      title: "Crivo de Eratóstenes & Miller-Rabin", 
+      description: "Códigos para encontrar números primos via Crivo de Eratóstenes e algoritmo de Miller-Rabin.", 
+      tags: ["Crivo de Eratóstenes", "Miller-Rabin"] 
+    }
   ];
 
   const devProjects = [
-    { title: "API Modular", description: "Backend focado em alta disponibilidade e modularização.", tags: ["Node.js", "Docker", "REST"] }
+    { 
+      title: "RPG com Mestre IA", 
+      description: "Desenvolvimento em andamento de um Role Playing Game (RPG) onde o mestre é um pseudo agente de IA.", 
+      tags: ["Python", "IA", "Game Dev"] 
+    },
+    { 
+      title: "Sistema Fullstack Solveware", 
+      description: "Desenvolvimento do front-end da aplicação, modelagem de relacionamentos do banco de dados e gestão da equipe de produção.", 
+      tags: ["SQL", "HTML/CSS", "Gestão"] 
+    },
+    { 
+      title: "Desafio técnico Geeco", 
+      description: "Desenvolvimento do front-end da aplicação, modelagem de relacionamentos do banco de dados, controle de usuários e implementação de um chatbot para realizar consultas para a equipe de compras.", 
+      tags: ["SQL", "Next", "Python", "Chatbot", "IA"] 
+    }
   ];
 
-return (
+  return (
     <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Hero Section */}
       <section className="mb-24">
@@ -22,7 +63,7 @@ return (
           Mateus Amaral da Silva
         </h1>
         <p className="max-w-xl text-lg font-medium font-mono text-gray-700">
-          Estudante & Pesquisador em Ciência da Computação.
+          Cientista da Computação focado em IA aplicada em ambientes reais. Experiência prática com aprendizado profundo, federado e segurança da informação.
         </p>
       </section>
 

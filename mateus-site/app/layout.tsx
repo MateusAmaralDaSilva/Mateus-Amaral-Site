@@ -26,10 +26,10 @@ export default function RootLayout({
         {/* Header Global */}
         <Header />
 
-        {/* O main usa flex-grow para ocupar todo o espaço vazio disponível,
-          empurrando o Footer para baixo caso a página tenha pouco conteúdo.
+        {/* O main usa flex-grow para ocupar o espaço vazio,
+          e pb-32 para dar espaço ao footer fixo.
         */}
-        <main className="flex-grow w-full">
+        <main className="flex-grow w-full pb-32">
           {children}
         </main>
 

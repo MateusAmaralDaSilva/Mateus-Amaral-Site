@@ -1,8 +1,9 @@
 // src/app/page.tsx
-import Section from '@/components/section';
-import AreaSection from '@/components/projectsubtopic';
-import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projects';
+import Section from '@/components/structure/section';
+import AreaSection from '@/components/page-components/projectsection';
+import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards';
 import { profilePicture } from '@/components/images';
+import {} from '@/components/page-components/projectpage';
 
 export default function Home() {
   return (

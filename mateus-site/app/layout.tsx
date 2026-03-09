@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 // Importando os nossos novos módulos
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from '@/components/structure/header';
+import Footer from '@/components/structure/footer';
 
 export const metadata: Metadata = {
   title: 'O Meu Portfólio | Comp Sci',

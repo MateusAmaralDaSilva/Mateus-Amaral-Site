@@ -2,6 +2,7 @@
 import Section from '@/components/section';
 import AreaSection from '@/components/projectsubtopic';
 import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projects';
+import { profilePicture } from '@/components/images';
 
 export default function Home() {
   return (
@@ -9,9 +10,21 @@ export default function Home() {
       
       {/* Main Section */}
       <section className="mb-32 mt-10">
-        <h1 className="text-5xl md:text-7xl font-black uppercase leading-none mb-6 tracking-tighter">
-          Mateus Amaral da Silva
-        </h1>
+        {/* Container Flex */}
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6">
+          <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tighter text-center md:text-left">
+            Mateus Amaral da Silva
+          </h1>
+          <div className="relative w-20 h-20 md:w-20 md:h-20 shrink-0 rounded-full overflow-hidden border-2 border-black">
+            {profilePicture}
+          </div>
+        </div>
+
+        {/* Introdução */}
+        <p className="max-w-xl text-lg font-medium font-mono text-gray-700 text-center md:text-left">
+          Cientista da Computação focado em IA aplicada em ambientes reais. Experiência prática com aprendizado profundo, federado e segurança da informação.
+        </p>
+
       </section>
 
       {/* 1. SEÇÃO SOBRE MIM */}
@@ -20,16 +33,9 @@ export default function Home() {
           <div>
             <p className="mb-6">
               Atualmente no 6º semestre de Ciência da Computação na UFMG, atuo como pesquisador no Future Lab. 
-              Meu foco principal é a interseção entre saúde e tecnologia, desenvolvendo modelos de aprendizado 
-              federado para ambientes reais.
+              Meu foco principal é trabalhar com tecnologias emergentes, desenvolvendo modelos de aprendizado 
+              de máquina para ambientes reais.
             </p>
-          </div>
-          
-          {/* Caixa lateral estilo terminal */}
-          <div className="font-mono text-sm border-l-2 border-black pl-6 flex flex-col justify-center gap-4">
-            <p><strong>[Linguagens]:</strong> Python, C++, SQL, Java</p>
-            <p><strong>[Ecossistema]:</strong> PyTorch, FastAPI, Next.js, Docker</p>
-            <p><strong>[MLOps / DevOps]:</strong> Flautim, Flower, Git</p>
           </div>
         </div>
       </Section>
@@ -41,6 +47,14 @@ export default function Home() {
           <AreaSection title="Ciência de Dados & ML" projects={dataScienceProjects} />
           <AreaSection title="Cybersecurity" projects={cyberProjects} />
           <AreaSection title="Desenvolvimento" projects={devProjects} />
+        </div>
+      </Section>
+
+      {/* 3. SEÇÃO DE HOBBIES */}
+      <Section title="// Hobbies" id="hobbies">
+        {/* Passamos a borda superior para cá, pois ela faz sentido no contexto de lista expansível */}
+        <div className="flex flex-col border-t-2 border-black">
+          Work In Progress
         </div>
       </Section>
     </div>

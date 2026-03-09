@@ -1,4 +1,4 @@
-import { GithubIcon, LockIcon } from '@/components/icons';
+import { GithubIcon, LockIcon } from '@/components/images';
 import { ProjectCardProps } from '@/interfaces';
 
 export default function ProjectCard({ title, description, tags, githubUrl, isPrivate }: ProjectCardProps) {

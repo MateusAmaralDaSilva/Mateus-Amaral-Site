@@ -22,3 +22,9 @@ export interface AreaSectionProps {
     title: string;
     projects: Project[];
 }
+
+export interface ProjectHeaderProps {
+  title: string;
+  tags: string[];
+  githubUrl?: string;
+}

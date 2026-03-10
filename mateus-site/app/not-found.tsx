@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BackButton from '@/components/buttons';
 
 export default function NotFound() {
   return (
@@ -31,12 +32,7 @@ export default function NotFound() {
       </div>
 
       {/* Botão de Retorno */}
-      <Link 
-        href="/" 
-        className="font-mono text-sm uppercase tracking-widest border-2 border-black px-8 py-4 hover:bg-black hover:text-white transition-colors duration-300 font-bold"
-      >
-        {"<- Voltar para o início"}
-      </Link>
+      <BackButton text="<- Voltar para Home" />
       
     </div>
   );

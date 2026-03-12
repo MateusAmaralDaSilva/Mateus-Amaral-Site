@@ -17,6 +17,9 @@ export const content: ContentBlock[] = [
   { type: 'text', value: 'Esse resultado foi a primeira indicação de que o aprendizado federado poderia além de garantir a privacidade dos dados trazer resultados que não sofram domain-shift.'},
   { type: 'code', caption: 'python', value: 'def train_federated_model():\n    # Arquitetura hierárquica Flautim\n    pass' },
 
-  { type: 'text', value: 'O proximo passo era lapidar o modelo, antes estavamos usando a ResNet34, agora tinhamos começado a usar a ResNet50, para conseguir rodar este modelo migramos para a plataforma própria de aprendizado centralizado e federado do laborátorio, o Flautim, um framework que utiliza do Flower para fornecer um ambiente de aprendizado federado.'},
-  { type: 'text', value: 'Com um ambiente com alto poder computacional começamos a aplicar técnicas e ferramentas de treino e validação de modelos mais robustas.'}
+  { type: 'text', value: 'O proximo passo era lapidar o modelo, antes eu estava usando a ResNet34, agora tinha começado a usar a ResNet50, para conseguir rodar este modelo migrei para a plataforma própria de aprendizado centralizado e federado do laborátorio, o Flautim, um framework que utiliza do Flower para fornecer um ambiente de aprendizado federado.'},
+  { type: 'text', value: 'Com um ambiente com alto poder computacional comecei a aplicar técnicas e ferramentas de treino e validação de modelos mais robustas. Eu adicionei dataaugmentation, transforms, métricas comuns como f1 score e curva roc, métricas não supervisionadas de cluster e de regressão, além de criar uma visualização espacial de como o modelo se comporta, desta forma possibilitando com o olho humano entender parcialmente como o modelo está interpretando os dados.'},
+  { type: 'image', value: ''},
+  { type: 'image', value: ''},
+  { type: 'image', value: ''},
 ];

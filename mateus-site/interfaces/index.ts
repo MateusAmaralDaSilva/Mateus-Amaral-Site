@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type BlockType = 'section_header' | 'text' | 'image' | 'code';
 
 export interface ContentBlock {
@@ -27,4 +29,10 @@ export interface ProjectHeaderProps {
   title: string;
   tags: string[];
   githubUrl?: string;
+}
+
+export interface SectionProps {
+  title: string;
+  id?: string;
+  children: ReactNode;
 }

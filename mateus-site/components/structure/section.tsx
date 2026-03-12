@@ -1,11 +1,5 @@
 // src/components/Section.tsx
-import { ReactNode } from 'react';
-
-interface SectionProps {
-  title: string;
-  id?: string;
-  children: ReactNode;
-}
+import { SectionProps } from "@/interfaces";
 
 export default function Section({ title, id, children }: SectionProps) {
     return (

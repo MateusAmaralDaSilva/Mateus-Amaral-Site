@@ -1,10 +1,9 @@
 // src/data/content/CI-IA-Saude.ts
 import { ContentBlock } from '@/interfaces';
 
-// Exportamos APENAS os blocos daquele projeto
 export const content: ContentBlock[] = [
-  { type: 'section_header', value: '// Criptografia-e-Quebra-de-Cifras' },
-  { type: 'text', value: 'Algoritmo de criptografia em crifra aleatória e descriptografia baseada em frequência linguística'},
+  { type: 'section_header', value: '// Narrative IA agent' },
+  { type: 'text', value: 'Um RPG narrativo  onde o mestre da história é uma IA generativa'},
 
   { type: 'section_header', value: '// Motivação' },
   { type: 'text', value: 'Além do interesse na área de criptografia e segurança, fui incentivado pelo professor Jeroen Maria Van de Graaff a ler o livro Understanding Cryptography A Textbook for Students and Practitioners from Christof Paar and Jan Pelzl, e seu primeiro cápitulo trata dessas criptografias básicas e como quebra-las.' },

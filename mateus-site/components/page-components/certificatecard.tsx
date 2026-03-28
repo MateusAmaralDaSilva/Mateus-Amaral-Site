@@ -18,7 +18,7 @@ export default function CertificateCard({ title, imgThumb, pdfUrl }: Certificate
                         src={imgThumb} 
                         alt={title} 
                         fill 
-                        className="object-cover"
+                        className="object-contain"
                         sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
                     />
                     

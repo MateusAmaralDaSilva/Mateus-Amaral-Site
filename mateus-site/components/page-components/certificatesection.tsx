@@ -1,9 +1,7 @@
 'use client';
-
 import { useState } from 'react';
 import { certificadosData } from '@/data/certificados';
 import CertificateCard from '@/components/page-components/certificatecard';
-import Section from '@/components/structure/section'; // <- Importando o seu Wrapper Genérico!
 
 export default function CertificatesSection() {
     
@@ -15,7 +13,7 @@ export default function CertificatesSection() {
     }, {} as Record<number, typeof certificadosData>);
 
     const years = Object.keys(grouped).map(Number).sort((a, b) => b - a);
-    const [openYears, setOpenYears] = useState<number[]>([years[0]]);
+    const [openYears, setOpenYears] = useState<number[]>([]);
     const toggle = (y: number) => setOpenYears(p => p.includes(y) ? p.filter(i => i !== y) : [...p, y]);
 
     return (

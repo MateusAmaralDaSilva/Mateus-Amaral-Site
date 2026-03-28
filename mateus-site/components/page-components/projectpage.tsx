@@ -1,21 +1,34 @@
-import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards';
-import { ContentBlock } from '@/interfaces';
+// src/components/page-components/projectpage.ts
+import fs from 'fs';
+import path from 'path';
 import { notFound } from 'next/navigation';
+// Importamos os seus arrays centralizados
+import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards'; 
 
+// Junta todos numa lista só para facilitar a busca
 const allProjects = [...dataScienceProjects, ...cyberProjects, ...devProjects];
 
 export default async function getProjectPage(slug: string) {
+    // 1. A FONTE DA VERDADE: Busca os metadados (título, tags, etc) no TypeScript
     const projectInfo = allProjects.find((p) => p.slug === slug);
 
-    if (!projectInfo) notFound();
+    // Se o slug não existir na lista, dá erro 404
+    if (!projectInfo) {
+        notFound();
+    }
 
-    let blocks: ContentBlock[] = [];
+    // 2. O TEXTO: Vai ler o arquivo MDX correspondente
+    const filePath = path.join(process.cwd(), 'data', 'projects', `${slug}.mdx`);
+    let content = '';
+
     try {
-        const module = await import(`@/data/projects/${slug}`);
-        blocks = module.content;
+        // Lê apenas o texto puro (já que removemos o Frontmatter, não precisamos do gray-matter)
+        content = fs.readFileSync(filePath, 'utf8');
     } catch (error) {
-        // Arquivo de texto longo ainda não existe, não faz nada
+        // Se você criou o card mas ainda não escreveu o MDX, não quebra a página
+        content = 'Conteúdo do projeto em construção...';
     }
     
-    return { projectInfo, blocks };
+    // Devolve os dois juntos para a sua página renderizar!
+    return { projectInfo, content };
 }

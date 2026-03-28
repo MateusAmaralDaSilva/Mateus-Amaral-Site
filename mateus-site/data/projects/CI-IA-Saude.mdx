@@ -1,0 +1,40 @@
+## // Projeto CI-IA Saúde - Detecção de câncer de colo uterino
+
+Responsabilidades (primeira fase): Leitura e apresentação de artigos, propor novas ideias/caminhos, criar gráficos de desempenho de modelos
+
+Responsabilidades (segunda fase): Criar modelos de aprendizado centralizado e federado utilizando-se de CNNs e da plataforma Flautim, criar métricas supervisionadas e não supervisionadas, fazer dataaugmentation e liderar a equipe de modelos
+
+## // Motivação
+
+No Brasil, temos uma grande demanda de análise de exames de Papa Nicolau, em áreas rurais e afastadas de grandes cidades não existe oferta de médicos o suficiente para suprir toda a demanda de análise, a UFMG coleta exames de Minas Gerais e região com o intuito de prover uma análise de qualidade para todas as mulheres, entretanto a quantidade de exames aumentam cada vez mais e para a demanda continuar sendo tratada a UFMG busca desenvolver um modelo preditivo capas de diagnósticar lesões cervicais.
+
+## // Resultados
+
+Um dos principais problemas relacionados a este projeto é garantir a privacidade dos dados ao mesmo tempo em que exista amostras de diversos hospitais para que assim tenhamos um modelo robusto e que não sofra com a generalização dos dados, até porque cada laboratório usa pigmentos e máquinas diferentes para digitalizar as amostras dos exames de papa-nicolau. Para solucionar este problema foi proposto pelo professor o uso de aprendizado federado, desta forma os dados sempre estariam nos hospitais preservando a informação de cada um deles e também seria mais robusto a generalização por conta da forma que os parâmetros do modelo são ajustadas neste paradigma.
+
+
+Esse resultado foi a primeira indicação de que o aprendizado federado poderia além de garantir a privacidade dos dados trazer resultados que não sofram domain-shift.
+
+O proximo passo era lapidar o modelo, antes estavamos usando a ResNet34, agora tinhamos começado a usar a ResNet50, para conseguir rodar este modelo migramos para a plataforma própria de aprendizado centralizado e federado do laborátorio, o Flautim, um framework que utiliza do Flower para fornecer um ambiente de aprendizado federado.
+
+Com um ambiente com alto poder computacional começamos a aplicar técnicas e ferramentas de treino e validação de modelos mais robustas, usamos métricas de validação supervisionadas (accuracy, precision, recall...) e não supervisionadas (métricas de cluster e regressão) para trazer resultados mais interpretáveis.
+
+![Gráfico de comparação evidenciando performance de FL em domain shift](/images/projectImgs/CI-IA-Saude/imagem1.jpeg)
+
+Então começamos a usar a Resnet50 na plataforma Flautim para podermos extrair melhores métricas do nosso novo modelo, neste momento aplicamos diversas técnicas novas: transforms, dataaugmentation, validação por kmeans, validação por regressão ordinal, auc score e etc. Para criarmos as validações não supervisionadas alteramos a forma que o modelo executa suas camadas, assim somos capazes de obter as camadas finais antes da classificação para obtermos os embeddings.
+
+Aqui seguem os resultados:
+
+Vemos que o cluster conseguiu separar bem os dados, não de forma absoluta pela complexidade dos dados mas se desempenhou bem.
+![Imagem da distribuição dos pontos ao fim do treinamento](/images/projectImgs/CI-IA-Saude/embeddings_13.svg)
+
+A regressão ordinal mostra o quão bem o modelo está classificando usando a esperança de Y (E(y)). A baixa variação da reta mostra sua eficácia.
+![Regressão ordinal, avaliando a classificação das células](/images/projectImgs/CI-IA-Saude/regression_plot14.svg)
+
+Curvas Roc para as 3 classes do dataset, vemos que as classes tiveram um bom desempenho com a curva roc, exceto a de lesões benignas já que a amostra delas são pequenas no dataset.
+![Curva roc para a classe sem lesão na célula](/images/projectImgs/CI-IA-Saude/roc_binaria_class_0_run_10.svg)
+![Curva roc para a classe para lesão benigna](/images/projectImgs/CI-IA-Saude/roc_binaria_class_1_run_11.svg)
+![Curva roc para a classe com lesão](/images/projectImgs/CI-IA-Saude/roc_binaria_class_2_run_12.svg)
+
+
+

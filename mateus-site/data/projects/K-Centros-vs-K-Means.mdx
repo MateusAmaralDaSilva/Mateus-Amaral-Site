@@ -1,0 +1,11 @@
+## // K-Centros vs K-Means
+
+Comparação detalhada entre técnicas clássicas de *clustering* (agrupamento): os algoritmos K-Means e K-Centros.
+
+## // Resultados
+
+Neste projeto, foi possível comparar os dois algoritmos e analisar de perto as suas qualidades e limitações. No repositório do GitHub, disponibilizei um arquivo .pdf onde detalho de forma minuciosa as diferenças matemáticas e práticas entre as técnicas. 
+
+De forma simplificada, podemos destacar que o **K-Means** possui uma ordem de complexidade computacional bem menor. Isso ocorre porque ele não recalcula a distância de um ponto para todos os outros pontos do *cluster*, mas sim calcula a distância para o ponto médio (centroide) do grupo.
+
+Por outro lado, sabemos que a média é uma métrica extremamente sensível a *outliers* (pontos fora da curva/anômalos). Portanto, o algoritmo K-Means pode sofrer muito e perder precisão em casos onde a escala de grandeza das coordenadas é muito distinta entre os pontos de um mesmo grupo. É justamente nesses cenários que abordagens baseadas em centros reais (como o K-Centros) podem se mostrar mais robustas.

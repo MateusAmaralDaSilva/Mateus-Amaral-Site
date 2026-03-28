@@ -1,0 +1,96 @@
+## // Criptografia e Quebra de Cifras
+
+Algoritmo de criptografia por cifra de substituição aleatória e descriptografia baseada em análise de frequência linguística.
+
+## // Motivação
+
+Além do meu interesse natural pela área de criptografia e segurança, fui incentivado pelo professor Jeroen Maria Van de Graff a ler o livro Understanding Cryptography A Textbook for Students and Practitioners from Christof Paar and Jan Pelzl. O primeiro capítulo desta obra trata justamente dessas cifras criptográficas clássicas e das técnicas matemáticas para quebrá-las.
+
+## // Código e Funcionamento
+
+A ideia inicial é simples: pegamos as letras do alfabeto e as mapeamos aleatoriamente para outros caracteres. Dessa forma, nosso algoritmo torna-se muito mais robusto do que métodos tradicionais, como a Cifra de César, que apenas aplicam um deslocamento (*shift*) fixo e arbitrário nas letras.
+
+```python
+import random
+entrada = input("Insira um entrada: ")
+texto = " "
+alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+chave = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+random.shuffle(chave)
+for letra in entrada:
+    if letra == " ":
+        texto += " "
+    else:
+        texto += (chave[alfabeto.index(letra)])
+print(f"mensagem criptografada: {texto}  chave: {chave}")
+```
+
+Na segunda etapa, utilizamos um método de análise de frequência estatística, ajustado de acordo com o idioma selecionado, para descriptografar o texto. O algoritmo identifica o caractere mais frequente daquele idioma e o substitui pelo caractere mais frequente encontrado no texto cifrado, repetindo esse processo sucessivamente.
+
+```python
+frequenciabr = ["a", "e", "o", "s", "r", "i", "n", "d", "m", "u", "t", "c", "l", "p", "v", "g", "h", "q", "b", "f", "z", "j", "x", "k", "y," "w"]
+frequenciaeng = ["e", "t", "a", "o", "i", "n", "s", "h", "r", "d", "l", "c", "u", "m", "w", "f", "g", "y", "p", "b", "v", "k", "j", "x", "q", "z"]
+
+if idioma == "BR":
+    frequencia = frequenciabr
+else:
+    frequencia = frequenciaeng
+    
+for letra in alfabeto:
+    if(letra != ' '):
+        quant.append(texto.count(letra))
+
+i = 0
+while(i < len(alfabeto)):
+    j = i
+    while(j < len(alfabeto)):
+        if(quant[i] < quant[j]):
+            temp = quant[i]
+            quant[i] = quant[j]
+            quant[j] = temp
+            temp2 = alfabeto[i]
+            alfabeto[i] = alfabeto[j]
+            alfabeto[j] = temp2
+        j += 1
+    i += 1
+
+novoTexto = ""
+for letra in texto:
+   if(letra != ' '):
+    novoTexto += frequencia[alfabeto.index(letra)]
+   else:
+      novoTexto += ' '
+
+
+while(True):
+   print(f"\n{novoTexto}\n")
+   resposta = input("Deseja Trocar Duas Letras? (S/N): ")
+   if(resposta == "N" or resposta == "n"):
+      break
+   else:
+        letras = input("Digite as Duas Letras: (Dê espaço entre as letras) ")
+        index1 = frequencia.index(letras[0])
+        index2 = frequencia.index(letras[2])
+        temp3 = frequencia[index1]
+        frequencia[index1] = frequencia[index2]
+        frequencia[index2] = temp3
+        novoTexto = ""
+        for letra in texto:
+            if(letra != ' '):
+                novoTexto += frequencia[alfabeto.index(letra)]
+            else:
+                novoTexto += ' '
+```
+
+Em textos minimamente extensos, onde a distribuição estatística das letras se aproxima do padrão do idioma, esse código já entrega um resultado altamente satisfatório. A etapa final do processo consiste em um pequeno ajuste manual (revisão humana) para descobrir e alterar as poucas letras restantes que o modelo automático não conseguiu mapear com exatidão.
+
+Aqui está um teste do algoritmo:
+
+mensagem encriptada por frequencia:
+lrvmnir bpr sumvbwvr jx bpr lmiwv yjeryrkbi jx qmbm wi bpr xjvni mkd ymibrut jx irhx wi bpr riirkvr jx ymbinlmtmipw utn qmumbr dj w ipmhh but bj rhnvwdmbr bpr yjeryrkbi jx bpr qmbm mvvjudwko bj yt wkbrusurbmbwjk lmird jk xjubt trmui jx ibndt wb wi kjb mk rmit bmiq bj rashmwk rmvp yjeryrkb mkd wbi iwokwxwvmkvr mkd ijyr ynib urymwk nkrashmwkrd bj ower m vjyshrbr rashmkmbwjk jkr cjnhd pmer bj lr fnmhwxwrd mkd wkiswurd bj invp mk rabrkb bpmb pr vjnhd urmvp bpr ibmbr jx rkhwopbrkrd ywkd vmsmlhr jx urvjokwgwko ijnkdhrii ijnkd mkd ipmsrhrii ipmsr w dj kjb drry ytirhx bpr xwkmh mnbpjuwbt lnb yt rasruwrkvr cwbp qmbm pmi hrxb kj djnlb bpmb bpr xjhhjcwko wi bpr sujsru msshwvmbwjk mkd wkbrusurbmbwjk w jxxru yt bprjuwri wk bpr pjsr bpmb bpr riirkvr jx jqwkmcmk qmumbr cwhh urymwk wkbmvb
+
+1º parte do algoritmo de descriptografar (automática):
+yecafse the wractnce iu the yasnc mijemeots iu bata ns the uicfs aod masterg iu selu ns the esseoce iu matsfyagashn rgf barate di n shall trg ti elfcndate the mijemeots iu the bata accirdnop ti mg noterwretatnio yased io uirtg gears iu stfdg nt ns oit ao easg tasb ti ekwlano each mijemeot aod nts snponuncaoce aod sime mfst remano foekwlanoed ti pnje a cimwlete ekwlaoatnio ioe vifld haje ti ye xfalnuned aod noswnred ti sfch ao ekteot that he cifld reach the state iu eolnphteoed mnod cawayle iu reciponqnop sifodless sifod aod shaweless shawe n di oit deem mgselu the unoal afthirntg yft mg ekwerneoce vnth bata has leut oi difyt that the uillivnop ns the wriwer awwlncatnio aod noterwretatnio n iuuer mg theirnes no the hiwe that the esseoce iu ibnoavao barate vnll remano notact
+
+2º parte do algoritmo com poucas trocas (manual):
+because the practice of the basic movements of jata is the focus and mastery of self is the essence of matsubayashi ryu jarate do i shall try to elucidate the movements of the jata according to my interpretation based on forty years of study it is not an easy tasj to explain each movement and its significance and some must remain unexplained to give a complete explanation one would have to be qualified and inspired to such an extent that he could reach the state of enlightened mind capable of recognizing soundless sound and shapeless shape i do not deem myself the final authority but my experience with jata has left no doubt that the following is the proper application and interpretation i offer my theories in the hope that the essence of ojinawan jarate will remain intact

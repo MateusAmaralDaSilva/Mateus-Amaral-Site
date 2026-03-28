@@ -1,0 +1,18 @@
+
+## // Narrative IA Agent
+
+Um RPG narrativo onde o mestre da história é uma Inteligência Artificial generativa.
+
+## // Motivação
+
+A principal motivação deste projeto foi aprofundar os meus conhecimentos práticos em IA generativa, testando os limites e as capacidades de raciocínio lógico de um modelo de linguagem ao atuar como o "Mestre" (*Dungeon Master*) de um jogo interativo.
+
+## // Resultados e Desafios
+
+A base do código foi estruturada utilizando a biblioteca `llama.cpp`. A escolha deu-se pela sua leveza e rapidez de inferência, uma vez que é nativamente implementada em C++. Já todo o gerenciamento de dados, lógica de estado e controle do jogo foram desenvolvidos em Python.
+
+Como resultado prático, construí um sistema completo de ponta a ponta. O ciclo principal consistia em: criar o estado do jogo, empacotar o estado atual junto com o estado anterior (para fornecer contexto e memória à IA), e processar o retorno gerando um novo estado. Além disso, o sistema conta com criação de usuários e salvamento de progresso, permitindo que o jogador feche o programa e retome a aventura exatamente de onde parou.
+
+O maior desafio técnico encontrado está diretamente ligado às limitações dos modelos Open Source que eu tinha capacidade computacional para rodar localmente. Com o passar dos turnos na história, as LLMs perdiam a capacidade de manter a resposta formatada estritamente em **JSON**. Quando o JSON era gerado com erros de sintaxe, o algoritmo falhava ao tentar atualizar as fases do jogo. 
+
+Devido a esse gargalo de formatação da saída do modelo, o projeto encontra-se atualmente em pausa, com planos para ser repaginado no futuro utilizando técnicas mais modernas de extração estruturada de dados ou modelos mais robustos.

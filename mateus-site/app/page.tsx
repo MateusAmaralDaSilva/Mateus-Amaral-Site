@@ -4,6 +4,7 @@ import AreaSection from '@/components/page-components/projectsection';
 import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards';
 import { profilePicture } from '@/components/images';
 import {} from '@/components/page-components/projectpage';
+import CertificatesSection from '@/components/page-components/certificatesection'; // Importamos a seção de certificados
 
 export default function Home() {
   return (
@@ -51,7 +52,15 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 3. SEÇÃO DE HOBBIES */}
+      {/* 3. SEÇÃO DE CERTIFICADOS */}
+      <Section title="// Certificados" id="certificados">
+        {/* Passamos a borda superior para cá, pois ela faz sentido no contexto de lista expansível */}
+        <div className="flex flex-col border-t-2 border-black">
+          <CertificatesSection />
+        </div>
+      </Section>
+
+      {/* 4. SEÇÃO DE HOBBIES */}
       <Section title="// Hobbies" id="hobbies">
         {/* Passamos a borda superior para cá, pois ela faz sentido no contexto de lista expansível */}
         <div className="flex flex-col border-t-2 border-black">

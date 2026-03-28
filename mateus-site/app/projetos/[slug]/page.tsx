@@ -1,5 +1,5 @@
 import getProjectPage from '@/components/page-components/projectpage';
-import BackButton from '@/components/buttons';
+import {BackButton} from '@/components/buttons';
 import ProjectHeader from '@/components/structure/projectheader';
 import { MdxRenderer } from '@/components/structure/mdxrenderer';
 

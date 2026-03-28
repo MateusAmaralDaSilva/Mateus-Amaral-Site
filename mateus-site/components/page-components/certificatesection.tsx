@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { certificadosData } from '@/data/certificados';
-import CertificateCard from '@/components/page-components/certificate';
+import CertificateCard from '@/components/page-components/certificatecard';
 import Section from '@/components/structure/section'; // <- Importando o seu Wrapper Genérico!
 
 export default function CertificatesSection() {

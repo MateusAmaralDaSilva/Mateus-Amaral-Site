@@ -49,3 +49,8 @@ export interface SectionProps {
   id?: string;
   children: ReactNode;
 }
+
+export interface BackButtonProps {
+  href?: string;
+  text?: string;
+}

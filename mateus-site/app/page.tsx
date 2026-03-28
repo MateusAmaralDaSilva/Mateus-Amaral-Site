@@ -4,7 +4,8 @@ import AreaSection from '@/components/page-components/projectsection';
 import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards';
 import { profilePicture } from '@/components/images';
 import {} from '@/components/page-components/projectpage';
-import CertificatesSection from '@/components/page-components/certificatesection'; // Importamos a seção de certificados
+import CertificatesSection from '@/components/page-components/certificatesection';
+import { ResumeButton } from '@/components/buttons'; 
 
 export default function Home() {
   return (
@@ -31,13 +32,19 @@ export default function Home() {
 
       {/* 1. SEÇÃO SOBRE MIM */}
       <Section title="// Sobre" id="sobre">
-        <div className="border-t-2 border-black pt-10 grid grid-cols-1 md:grid-cols-2 gap-12 text-lg font-medium leading-relaxed">
+        <div className="border-t-2 border-black pt-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <p className="mb-6">
               Atualmente no 6º semestre de Ciência da Computação na UFMG, atuo como pesquisador no Future Lab. 
               Meu foco principal é trabalhar com tecnologias emergentes, desenvolvendo modelos de aprendizado 
               de máquina para ambientes reais.
             </p>
+          </div>
+          <div>
+            <p className="mb-2">
+              Saiba mais sobre minha trajetória acadêmica e profissional baixando meu currículo atualizado:
+            </p>
+            <ResumeButton />
           </div>
         </div>
       </Section>

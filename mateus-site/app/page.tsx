@@ -3,7 +3,6 @@ import Section from '@/components/structure/section';
 import AreaSection from '@/components/page-components/projectsection';
 import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectcards';
 import { profilePicture } from '@/components/images';
-import {} from '@/components/page-components/projectpage';
 import CertificatesSection from '@/components/page-components/certificatesection';
 import { ResumeButton } from '@/components/buttons'; 
 

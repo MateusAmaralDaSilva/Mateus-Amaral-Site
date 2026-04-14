@@ -22,7 +22,13 @@ export const dataScienceProjects: Project[] = [
         tags: ["Python", "IA", "Game Dev"],
         githubUrl: "https://github.com/MateusAmaralDaSilva/RPG-Game-using-AI-Agent",
         slug: "RPG-Mestre-IA" 
-    }
+    },
+    {
+        title: "Cientista de Dados na Guidance",
+        description: "Atuação como Cientista de Dados na empresa de consultoria Guidance experts.",
+        tags: ["Python", "IA", "Consultoria"],
+        slug: "Cientista-de-Dados-Guidance"
+    },
 ];
 
 export const cyberProjects: Project[] = [

@@ -4,7 +4,7 @@ import { Project } from '@/interfaces';
 export const dataScienceProjects: Project[] = [
     { 
         title: "IA em Saúde & Aprendizado Federado", 
-        description: "Implementação de modelos de aprendizado federado na plataforma Flautim para detecção de câncer de colo uterino, utilizando arquiteturas multimodais e hierárquicas.", 
+        description: "Implementação de modelos de aprendizado federado na plataforma Flautim para detecção de câncer de colo uterino.", 
         tags: ["Python", "Flautim", "Federated Learning"],
         isPrivate: true, // Indica que este projeto é privado/confidencial 
         slug: "CI-IA-Saude"

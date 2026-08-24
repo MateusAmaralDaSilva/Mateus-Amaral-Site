@@ -15,7 +15,7 @@ export function BackButton({ href = "/", text = "<- Voltar" }: BackButtonProps) 
 export function ResumeButton() {
     return (
         <a 
-            href="/files/Mateus Amaral da Silva Currículo.pdf" 
+            href="files\Mateus_Amaral_Currículo.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="inline-flex items-center gap-3 px-5 py-2 border-2 border-black font-mono text-sm font-bold uppercase tracking-widest transition-colors hover:bg-black hover:text-white group w-fit"

@@ -1,0 +1,154 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{Mateus Amaral da Silva}} \\ \vspace{5pt}
+    \small (31) 99136-9726 \quad
+    \href{mailto:silvaamaralmateus@gmail.com}{\underline{silvaamaralmateus@gmail.com}} \quad
+    \href{https://www.linkedin.com/in/mateus-amaral-da-silva}{\underline{LinkedIn}} \quad
+    \href{https://github.com/MateusAmaralDaSilva}{\underline{GitHub}} \quad
+    \href{https://mateus-amaral-site.vercel.app}{\underline{Portfolio}}
+\end{center}
+
+\section{Professional Summary}
+ \small{Computer Scientist focused on AI applied to sensitive environments, with practical experience in deep learning and federated learning, alongside solid knowledge in security and full-stack web development. Currently developing models for cervical cancer detection and conducting performance analyses for these systems. Experienced in assisting and mentoring junior AI/ML members, with a strong interest in deploying predictive and generative AI in production, focusing on efficiency, impact, scalability, and user security.}
+
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Data Scientist}{Apr 2026 -- Jul 2026}
+      {Guidance IA (AI Consulting Company)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Worked with multi-agent systems for a law firm, creating reliable and secure agents for the automation and generation of legal contracts.}
+        \resumeItem{Developed a multi-agent ticket summarization system for \^{A}nima in a high-volume data environment, reducing token costs and increasing overall model accuracy.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Researcher -- CI-IA Health Project (Cervical Cancer Detection)}{Apr 2025 -- Present}
+      {Federal University of Minas Gerais (UFMG)}{Belo Horizonte, MG, Brazil}
+      \resumeItemListStart
+        \resumeItem{Implemented federated learning models on the laboratory's platform (Flautim) for cervical cancer detection, achieving over 95\% accuracy even in highly imbalanced data scenarios.}
+        \resumeItem{Applied advanced model evaluation methods and Explainable AI (XAI) for rigorous interpretation and validation of system decisions.}
+        \resumeItem{Acted as a representative for the data and model engineering team, assisting in technical organization and training new members in machine learning and federated learning.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Developer and Production Manager}{Feb 2022 -- Dec 2022}
+      {IFMG | Solveware}{Minas Gerais, Brazil}
+      \resumeItemListStart
+        \resumeItem{Led direct communication with clients to gather requirements for a condominium management system.}
+        \resumeItem{Developed the relational database modeling and implemented the application's front-end.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Federal University of Minas Gerais (UFMG)}{Belo Horizonte, MG, Brazil}
+      {Bachelor of Science in Computer Science (7th Semester -- Expected: June 2028)}{Mar 2023 -- Present}
+    \resumeSubheading
+      {Federal Institute of Minas Gerais (IFMG)}{Minas Gerais, Brazil}
+      {Technical Degree in Informatics}{2020 -- 2022}
+  \resumeSubHeadingListEnd
+
+\section{Key Personal Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Multi-Agent System for Immersive RPG NPCs}}{GitHub / Website}
+        \resumeItemListStart
+          \resumeItem{Developed intelligent agents for RPG-style games focused on immersive behavior, accompanied by detailed performance and interpretability metrics.}
+        \resumeItemListEnd
+      \resumeProjectHeading
+        {\textbf{Personal Blog and Full-Stack Portfolio}}{GitHub / Website}
+        \resumeItemListStart
+          \resumeItem{Full-stack application developed and hosted following strict software engineering best practices, utilizing Next.js and modern design.}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:}{ Python, SQL, C++, Java, HTML, CSS, TypeScript, JavaScript} \\
+     \textbf{Libraries \& Frameworks:}{ PyTorch, TensorFlow, Scikit-learn, FastAI, FastAPI, Next.js, React} \\
+     \textbf{MLOps \& DevOps:}{ Flautim, Flower, Docker, Git} \\
+     \textbf{Databases:}{ MySQL, PostgreSQL} \\
+     \textbf{Knowledge:}{ Centralized and federated learning, data privacy and security, advanced validation metrics, data augmentation, feature engineering, full-stack development, and programming best practices.}
+    }}
+ \end{itemize}
+
+\section{Languages}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Portuguese:} Native \quad | \quad
+     \textbf{English:} Advanced \quad | \quad
+     \textbf{Spanish:} Intermediate \quad | \quad
+     \textbf{Libras (Brazilian Sign Language):} Basic
+    }}
+ \end{itemize}
+
+\end{document}

@@ -13,6 +13,7 @@ export const dataScienceProjects: Project[] = [
         title: "Segmentação Celular com IA",
         description: "Pipeline em Python para segmentação de instâncias celulares, extração de crops, treinamento e avaliação de máscaras.",
         tags: ["Python", "Computer Vision", "Deep Learning"],
+        isPrivate: true,
         slug: "Segmentacao-Celular"
     },
     { 
@@ -26,12 +27,14 @@ export const dataScienceProjects: Project[] = [
         title: "Immersive Tool for Games",
         description: "Ferramenta para jogos que transforma fala ou texto do jogador em estados de jogo válidos para NPCs.",
         tags: ["Python", "IA", "Game Dev", "Speech-to-Text"],
+        githubUrl: "https://github.com/MateusAmaralDaSilva/Immersive-Tool-For-Games-WIP-.git",
         slug: "Immersive-Tool-For-Games"
     },
     {
         title: "Cientista de Dados na Guidance",
         description: "Desenvolvimento de sistemas multiagentes com CrewAI para a Lacerda, empresa de advocacia, e para a Ânima, grupo educacional com várias universidades.",
         tags: ["Python", "CrewAI", "IA", "Sistemas Multiagentes"],
+        isPrivate: true,
         slug: "Cientista-de-Dados-Guidance"
     },
 ];
@@ -58,6 +61,7 @@ export const devProjects: Project[] = [
         title: "SaaS para Controle de Estoque e Agendamentos",
         description: "Aplicação full-stack desenvolvida e hospedada na Oracle, com controle de estoque, agendamentos, segurança contra ataques e aplicação de métodos de privacidade.",
         tags: ["Fullstack", "Oracle", "Segurança", "Privacidade"],
+        isPrivate: true,
         slug: "SaaS-Controle-de-Estoque-e-Agendamentos"
     },
     {

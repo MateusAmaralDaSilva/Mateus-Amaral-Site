@@ -5,6 +5,7 @@ import { dataScienceProjects, cyberProjects, devProjects } from '@/data/projectc
 import { profilePicture } from '@/components/images';
 import CertificatesSection from '@/components/page-components/certificatesection';
 import { ResumeButton } from '@/components/buttons'; 
+import ArticlesSection from '@/components/page-components/articlesection';
 
 export default function Home() {
   return (
@@ -58,7 +59,14 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 3. SEÇÃO DE CERTIFICADOS */}
+      {/* 3. SEÇÃO DE ARTIGOS */}
+      <Section title="// Artigos" id="artigos">
+        <div className="flex flex-col border-t-2 border-black">
+          <ArticlesSection />
+        </div>
+      </Section>
+
+      {/* 4. SEÇÃO DE CERTIFICADOS */}
       <Section title="// Certificados" id="certificados">
         {/* Passamos a borda superior para cá, pois ela faz sentido no contexto de lista expansível */}
         <div className="flex flex-col border-t-2 border-black">
@@ -66,7 +74,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 4. SEÇÃO DE HOBBIES */}
+      {/* 5. SEÇÃO DE HOBBIES */}
       <Section title="// Hobbies" id="hobbies">
         {/* Passamos a borda superior para cá, pois ela faz sentido no contexto de lista expansível */}
         <div className="flex flex-col border-t-2 border-black">

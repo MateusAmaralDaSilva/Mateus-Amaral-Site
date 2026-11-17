@@ -1,0 +1,19 @@
+## // Segmentação Celular com Inteligência Artificial
+
+Pipeline em Python para segmentação de instâncias celulares, extração de recortes, treinamento e avaliação de máscaras em imagens biomédicas.
+
+## // Motivação
+
+A análise de imagens microscópicas depende de identificar com precisão a região de cada célula. A segmentação manual pode ser demorada e variar entre avaliadores, por isso este projeto busca organizar uma etapa automatizada e reproduzível para apoiar experimentos de visão computacional na área da saúde.
+
+## // Resultados e Desafios
+
+O projeto foi organizado como um pipeline modular. Um dispatcher central escolhe a operação a partir de um arquivo TOML e permite executar segmentação, treinamento ou validação sem espalhar configurações pela linha de comando.
+
+Na etapa de inferência, o sistema possui adaptadores para diferentes abordagens, incluindo Cellpose, Mask R-CNN, MedSAM e MedSAM2. A mesma camada de processamento consegue carregar imagens, gerar máscaras, calcular métricas, salvar resultados e produzir recortes das instâncias encontradas.
+
+Também foram implementadas duas estratégias de extração de crops: recortes quadrados com tamanho fixo e recortes mascarados, que preservam apenas a instância segmentada. Essa separação facilita comparar modelos e preparar dados para etapas posteriores de classificação ou análise.
+
+Para o treinamento, o pipeline trabalha com o dataset em formato COCO, gera os flows necessários para o Cellpose e mantém os conjuntos de treino e teste separados. A validação independente permite avaliar máscaras já salvas usando métricas como pixel accuracy, error rate, precision e recall.
+
+O principal desafio foi criar uma estrutura flexível sem acoplar o restante do pipeline a um único modelo. Com interfaces comuns para os segmentadores, croppers e métricas, novas arquiteturas podem ser adicionadas sem reescrever o fluxo de processamento.

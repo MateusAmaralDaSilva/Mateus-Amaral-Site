@@ -1,0 +1,19 @@
+## // Immersive Tool for Games
+
+Uma ferramenta para jogos que recebe fala ou texto do jogador e classifica sua intenção em um estado de jogo permitido para NPCs.
+
+## // Motivação
+
+O projeto nasceu da ideia de tornar a interação com personagens não jogáveis mais natural sem permitir que um modelo de linguagem altere livremente as regras do jogo. Em vez de gerar diálogos sem controle, a IA funciona como um roteador: interpreta a entrada do jogador e retorna somente uma ação válida para o estado atual.
+
+## // Resultados e Desafios
+
+O sistema oferece diferentes formas de entrada: teclado, Vosk, Whisper e Whisper em tempo quase real, com detecção de silêncio. Todas as opções seguem o mesmo contrato de transcrição, o que permite trocar o mecanismo de reconhecimento de fala sem alterar o restante da aplicação.
+
+O contexto do jogo é definido em arquivos YAML independentes para NPCs, jogadores e regras. A partir desses arquivos, o projeto monta prompts dinamicamente com tarefa, estados permitidos, vieses e exemplos (*few-shots*). O modelo é executado com temperatura `0.0` para favorecer uma classificação determinística.
+
+Além da execução local, desenvolvi uma API HTTP em FastAPI para que qualquer jogo ou aplicação possa enviar a fala do jogador e receber uma resposta no formato de estado. Essa separação deixa a ferramenta independente da linguagem usada pelo jogo cliente.
+
+Um cuidado importante foi tratar respostas inválidas da LLM como `INVALID_STATE`, em vez de permitir que uma saída fora do formato avance a lógica do jogo. O módulo de avaliação calcula accuracy, precision, recall e a taxa de falha de formatação, ajudando a medir a confiabilidade do classificador.
+
+O principal desafio foi fazer modelos locais de linguagem obedecerem estritamente ao formato esperado ao longo de uma sessão. A solução foi limitar as opções no prompt, validar a saída e separar a geração da decisão final do jogo. Com isso, a IA amplia a imersão sem substituir as regras determinísticas do sistema.

@@ -1,0 +1,19 @@
+## // SaaS para Controle de Estoque e Agendamentos
+
+Uma plataforma SaaS full-stack e white-label para centralizar a operação de pequenos negócios, reunindo estoque, serviços, vendas, clientes, agendamentos, relatórios e suporte em um único sistema.
+
+## // Motivação
+
+Muitos negócios precisam combinar ferramentas diferentes para controlar produtos, acompanhar vendas e organizar compromissos. A proposta do Aubi é oferecer uma base única, configurável para cada empresa, sem exigir que o cliente mantenha vários sistemas desconectados.
+
+## // Resultados e Desafios
+
+O sistema foi estruturado como uma aplicação multi-tenant: a mesma plataforma atende várias empresas, mas cada conta possui sua própria marca, tema, usuários, módulos e dados. O cliente pode ativar, desativar e reordenar os módulos de acordo com a rotina do negócio.
+
+No frontend, desenvolvi uma SPA com React, TypeScript e Vite. A interface utiliza componentes reutilizáveis, temas por tokens e stores com Zustand para manter o estado de autenticação, marca, módulos e notificações. Entre os módulos disponíveis estão produtos com controle de estoque, serviços, vendas, clientes, agendas, dashboard, relatórios e chamados de suporte.
+
+O backend foi desenvolvido em Node.js e TypeScript, com API HTTP, PostgreSQL e autenticação por JWT. A separação por tenant é reforçada pelo Row-Level Security (RLS) do banco: cada requisição autenticada define o contexto da empresa antes de acessar os dados. Assim, a segurança não depende apenas de filtros adicionados pela interface.
+
+Também foram aplicadas práticas de segurança como validação de payloads, rate limit no login, isolamento de permissões por papel e operações administrativas protegidas. O projeto foi hospedado na Oracle Cloud, com configuração preparada para execução por containers.
+
+O principal desafio foi equilibrar flexibilidade e consistência: cada empresa pode personalizar sua experiência, mas as regras de negócio e o isolamento dos dados permanecem centralizados no backend. Esse desenho tornou possível evoluir o produto sem criar uma aplicação diferente para cada cliente.

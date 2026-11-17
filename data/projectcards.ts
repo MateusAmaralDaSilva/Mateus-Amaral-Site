@@ -9,6 +9,12 @@ export const dataScienceProjects: Project[] = [
         isPrivate: true, // Indica que este projeto é privado/confidencial 
         slug: "CI-IA-Saude"
     },
+    {
+        title: "Segmentação Celular com IA",
+        description: "Pipeline em Python para segmentação de instâncias celulares, extração de crops, treinamento e avaliação de máscaras.",
+        tags: ["Python", "Computer Vision", "Deep Learning"],
+        slug: "Segmentacao-Celular"
+    },
     { 
         title: "Clusterização: K-Centros vs K-Means", 
         description: "Implementação em Python do algoritmo “k-centros” e comparação com o modelo “k-means”.", 
@@ -16,17 +22,16 @@ export const dataScienceProjects: Project[] = [
         githubUrl: "https://github.com/MateusAmaralDaSilva/KMeans-vs-Algoritmos-de-Clustering-Aproximativos",
         slug: "K-Centros-vs-K-Means"
     },
-    { 
-        title: "RPG com Mestre IA", 
-        description: "Desenvolvimento em andamento de um Role Playing Game (RPG) onde o mestre é um pseudo agente de IA.", 
-        tags: ["Python", "IA", "Game Dev"],
-        githubUrl: "https://github.com/MateusAmaralDaSilva/RPG-Game-using-AI-Agent",
-        slug: "RPG-Mestre-IA" 
+    {
+        title: "Immersive Tool for Games",
+        description: "Ferramenta para jogos que transforma fala ou texto do jogador em estados de jogo válidos para NPCs.",
+        tags: ["Python", "IA", "Game Dev", "Speech-to-Text"],
+        slug: "Immersive-Tool-For-Games"
     },
     {
         title: "Cientista de Dados na Guidance",
-        description: "Atuação como Cientista de Dados na empresa de consultoria Guidance experts.",
-        tags: ["Python", "IA", "Consultoria"],
+        description: "Desenvolvimento de sistemas multiagentes com CrewAI para a Lacerda, empresa de advocacia, e para a Ânima, grupo educacional com várias universidades.",
+        tags: ["Python", "CrewAI", "IA", "Sistemas Multiagentes"],
         slug: "Cientista-de-Dados-Guidance"
     },
 ];
@@ -49,6 +54,12 @@ export const cyberProjects: Project[] = [
 ];
 
 export const devProjects: Project[] = [
+    {
+        title: "SaaS para Controle de Estoque e Agendamentos",
+        description: "Aplicação full-stack desenvolvida e hospedada na Oracle, com controle de estoque, agendamentos, segurança contra ataques e aplicação de métodos de privacidade.",
+        tags: ["Fullstack", "Oracle", "Segurança", "Privacidade"],
+        slug: "SaaS-Controle-de-Estoque-e-Agendamentos"
+    },
     {
         title: "Sistema Fullstack Solveware", 
         description: "Desenvolvimento do front-end da aplicação, modelagem de relacionamentos do banco de dados e gestão da equipe de produção.", 
